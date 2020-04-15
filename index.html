@@ -46,7 +46,6 @@
     <div class="w3-content w3-container w3-padding-64">
       <h3 class="w3-center">Insira os nicks dos jogadores</h3>
 
-      <form id="frm1" action="/guerrascivis">
 
         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
           <div class="w3-half">
@@ -118,7 +117,6 @@
         <button onclick="reset()" value="Limpar" tabindex="16" class="w3-button w3-black w3-section margem-direita-5">
           <i class="fa fa-trash"></i> &nbsp;&nbsp;&nbsp;&nbsp;LIMPAR
         </button> 
-      </form>
     </div>
   </center>
   
@@ -138,7 +136,7 @@
     var cadeiras = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
                     'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
                     'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14'];
-    var valoresCadeiras = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+
     var cargos = ['DETETIVE)   ', 'ALDEÃO)     ', 'ANJO)       ',
                   'JUÍZ)       ', 'FADA)       ', 'POLICIAL)   ',
                   'JUSTICEIRO) ', 'ASSASSINO)  ', 'APRENDIZ)   ',
@@ -156,8 +154,7 @@
     
     for (var i = 0; i < 14; i++) {
        var elem = document.getElementById(cadeiras[i]);
-       elem.value += (' (' + cargos[i]); 
-       console.log(elem.value);
+       elem.value += (' (' + cargos[i]);
     }
     
   }
@@ -179,6 +176,17 @@
     }
 
     return array;
+  }
+  
+  function reset() {
+    var cadeiras = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
+                    'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
+                    'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14'];
+    
+    for (var i = 0; i < 14; i++) {
+       var elem = document.getElementById(cadeiras[i]);
+       elem.value = "";
+    }
   }
 </script>
 
