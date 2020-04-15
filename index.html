@@ -13,21 +13,21 @@
 </head>
 
 <body>
+<center>
+  <p>Insira os nicks dos 14 jogadores:</p>
 
-<p>Insira os nicks dos 14 jogadores:</p>
-
-<form id="frm1" action="/action_page.php">
-  1&ordf;: <input id='cadeira1' type="text" name="cadeira1" size="40"> &nbsp;&nbsp;&nbsp;&nbsp; 8&ordf;: <input id='cadeira8' type="text" name="cadeira8" size="40"><br>
-  2&ordf;: <input id='cadeira2'  type="text" name="cadeira2" size="40"> &nbsp;&nbsp;&nbsp;&nbsp; 9&ordf;: <input id='cadeira9' type="text" name="cadeira9" size="40"><br>
-  3&ordf;: <input id='cadeira3' type="text" name="cadeira3" size="40"> &nbsp;&nbsp; 10&ordf;: <input id='cadeira10' type="text" name="cadeira10" size="40"><br>
-  4&ordf;: <input id='cadeira4' type="text" name="cadeira4" size="40"> &nbsp;&nbsp; 11&ordf;: <input id='cadeira11' type="text" name="cadeira11" size="40"><br>
-  5&ordf;: <input id='cadeira5' type="text" name="cadeira5" size="40"> &nbsp;&nbsp; 12&ordf;: <input id='cadeira12' type="text" name="cadeira12" size="40"><br>
-  6&ordf;: <input id='cadeira6' type="text" name="cadeira6" size="40"> &nbsp;&nbsp; 13&ordf;: <input id='cadeira13' type="text" name="cadeira13" size="40"><br>
-  7&ordf;: <input id='cadeira7' type="text" name="cadeira7" size="40"> &nbsp;&nbsp; 14&ordf;: <input id='cadeira14' type="text" name="cadeira14" size="40"><br><br>
-  <input type="button" onclick="myFunction()" value="Sortear cargos">
-  <input type="button" onclick="reset()" value="Limpar">
-</form>
-  
+  <form id="frm1" action="/action_page.php">
+    1&ordf;: <input id='cadeira1' type="text" name="cadeira1" size="40"> &nbsp;&nbsp;&nbsp;&nbsp; 8&ordf;: <input id='cadeira8' type="text" name="cadeira8" size="40"><br>
+    2&ordf;: <input id='cadeira2'  type="text" name="cadeira2" size="40"> &nbsp;&nbsp;&nbsp;&nbsp; 9&ordf;: <input id='cadeira9' type="text" name="cadeira9" size="40"><br>
+    3&ordf;: <input id='cadeira3' type="text" name="cadeira3" size="40"> &nbsp;&nbsp; 10&ordf;: <input id='cadeira10' type="text" name="cadeira10" size="40"><br>
+    4&ordf;: <input id='cadeira4' type="text" name="cadeira4" size="40"> &nbsp;&nbsp; 11&ordf;: <input id='cadeira11' type="text" name="cadeira11" size="40"><br>
+    5&ordf;: <input id='cadeira5' type="text" name="cadeira5" size="40"> &nbsp;&nbsp; 12&ordf;: <input id='cadeira12' type="text" name="cadeira12" size="40"><br>
+    6&ordf;: <input id='cadeira6' type="text" name="cadeira6" size="40"> &nbsp;&nbsp; 13&ordf;: <input id='cadeira13' type="text" name="cadeira13" size="40"><br>
+    7&ordf;: <input id='cadeira7' type="text" name="cadeira7" size="40"> &nbsp;&nbsp; 14&ordf;: <input id='cadeira14' type="text" name="cadeira14" size="40"><br><br>
+    <input type="button" onclick="myFunction()" value="Sortear cargos">
+    <input type="button" onclick="reset()" value="Limpar">
+  </form>
+  </center>
   
 
 <script>
@@ -37,14 +37,24 @@
                     'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
                     'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14'];
     var valoresCadeiras = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-    var cargos = ['DETETIVE', 'ALDEÃO', 'ANJO', 'JUÍZ', 'FADA', 'POLICIAL', 'JUSTICEIRO',
-                  'ASSASSINO', 'APRENDIZ', 'DEMÔNIO', 'PAPARAZZI', 'PARALISADOR', 'SILENCIADOR', 'PSICOPATA'];
+    var cargos = ['DETETIVE)   ', 'ALDEÃO)     ', 'ANJO)       ',
+                  'JUÍZ)       ', 'FADA)       ', 'POLICIAL)   ',
+                  'JUSTICEIRO) ', 'ASSASSINO)  ', 'APRENDIZ)   ',
+                  'DEMÔNIO)    ', 'PAPARAZZI)  ', 'PARALISADOR)',
+                  'SILENCIADOR)', 'PSICOPATA)  '];
 
     shuffle(cargos);
     
+    if(document.getElementById(cadeiras[0]).value.includes(" (")){
+      for (var i = 0; i < 14; i++) {
+         var elem = document.getElementById(cadeiras[i]);
+         elem.value = elem.value.substring(0, elem.value.length - 14);
+      }
+    }
+    
     for (var i = 0; i < 14; i++) {
        var elem = document.getElementById(cadeiras[i]);
-       elem.value += (' (' + cargos[i] + ')'); 
+       elem.value += (' (' + cargos[i]); 
        console.log(elem.value);
     }
     
