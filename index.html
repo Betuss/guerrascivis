@@ -2,32 +2,134 @@
 <html>
 <head>
   <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <meta http-equiv='x-ua-compatible' content='ie=edge'>
-    <meta name='description' content='Sorteio de cargos para Guerras Civis.'/>
-    <meta name='keywords' content='habbo,guerras,sortear,sorteio,sorte,civis,guerrascivis,ferramenta,hotel,jogar,hp'/>
-    <meta name='author' content='Betus (EdwardCullen!)'>
-    <meta name='robots' content='index, follow'>
-    <meta name='revisit-after' content='3 month'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <meta http-equiv='x-ua-compatible' content='ie=edge'>
+  <meta name='description' content='Sorteio de cargos para Guerras Civis.'/>
+  <meta name='keywords' content='habbo,guerras,sortear,sorteio,sorte,civis,guerrascivis,ferramenta,hotel,jogar,hp'/>
+  <meta name='author' content='Betus (EdwardCullen!)'>
+  <meta name='robots' content='index, follow'>
+  <meta name='revisit-after' content='3 month'>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Guerras Civis</title>
+  
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+    body, html {
+      height: 100%;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    /* Create a Parallax Effect */
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
+    
+    .margem-direita-5 {
+      margin-right: 5px;
+    }
+  </style>
 </head>
-
+  
+  
 <body>
-<center>
-  <p>Insira os nicks dos 14 jogadores:</p>
+  
+  <center> 
+    <div class="w3-content w3-container w3-padding-64">
+      <h3 class="w3-center">Insira os nicks dos jogadores</h3>
 
-  <form id="frm1" action="/action_page.php">
-    1&ordf;: <input id='cadeira1' type="text" name="cadeira1" size="40" tabindex="1"> &nbsp;&nbsp;&nbsp;&nbsp; 8&ordf;: <input id='cadeira8' type="text" name="cadeira8" size="40" tabindex="8"><br>
-    2&ordf;: <input id='cadeira2'  type="text" name="cadeira2" size="40" tabindex="2"> &nbsp;&nbsp;&nbsp;&nbsp; 9&ordf;: <input id='cadeira9' type="text" name="cadeira9" size="40" tabindex="9"><br>
-    3&ordf;: <input id='cadeira3' type="text" name="cadeira3" size="40" tabindex="3"> &nbsp;&nbsp; 10&ordf;: <input id='cadeira10' type="text" name="cadeira10" size="40" tabindex="10"><br>
-    4&ordf;: <input id='cadeira4' type="text" name="cadeira4" size="40" tabindex="4"> &nbsp;&nbsp; 11&ordf;: <input id='cadeira11' type="text" name="cadeira11" size="40" tabindex="11"><br>
-    5&ordf;: <input id='cadeira5' type="text" name="cadeira5" size="40" tabindex="5"> &nbsp;&nbsp; 12&ordf;: <input id='cadeira12' type="text" name="cadeira12" size="40" tabindex="12"><br>
-    6&ordf;: <input id='cadeira6' type="text" name="cadeira6" size="40" tabindex="6"> &nbsp;&nbsp; 13&ordf;: <input id='cadeira13' type="text" name="cadeira13" size="40" tabindex="13"><br>
-    7&ordf;: <input id='cadeira7' type="text" name="cadeira7" size="40" tabindex="7"> &nbsp;&nbsp; 14&ordf;: <input id='cadeira14' type="text" name="cadeira14" size="40" tabindex="14"><br><br>
-    <input type="button" onclick="myFunction()" value="Sortear cargos" tabindex="15">
-    <input type="button" onclick="reset()" value="Limpar" tabindex="16">
-  </form>
+      <form id="frm1" action="/action_page.php">
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira1' class="w3-input w3-border" type="text" placeholder="1&ordf; cadeira" tabindex="1">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira8' class="w3-input w3-border" type="text" placeholder="8&ordf; cadeira" tabindex="8">
+          </div>
+        </div>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira2' class="w3-input w3-border" type="text" placeholder="2&ordf; cadeira" tabindex="2">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira9' class="w3-input w3-border" type="text" placeholder="9&ordf; cadeira" tabindex="9">
+          </div>
+        </div>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira3' class="w3-input w3-border" type="text" placeholder="3&ordf; cadeira" tabindex="3">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira10' class="w3-input w3-border" type="text" placeholder="10&ordf; cadeira" tabindex="10">
+          </div>
+        </div>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira4' class="w3-input w3-border" type="text" placeholder="4&ordf; cadeira" tabindex="4">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira11' class="w3-input w3-border" type="text" placeholder="11&ordf; cadeira" tabindex="11">
+          </div>
+        </div>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira5' class="w3-input w3-border" type="text" placeholder="5&ordf; cadeira" tabindex="5">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira12' class="w3-input w3-border" type="text" placeholder="12&ordf; cadeira" tabindex="12">
+          </div>
+        </div>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira6' class="w3-input w3-border" type="text" placeholder="6&ordf; cadeira" tabindex="6">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira13' class="w3-input w3-border" type="text" placeholder="13&ordf; cadeira" tabindex="13">
+          </div>
+        </div>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira7' class="w3-input w3-border" type="text" placeholder="7&ordf; cadeira" tabindex="7">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira14' class="w3-input w3-border" type="text" placeholder="14&ordf; cadeira" tabindex="14">
+          </div>
+        </div>
+
+
+        <button onclick="myFunction()" value="Sortear cargos" tabindex="15" class="w3-button w3-black w3-section margem-direita-5">
+          <i class="fa fa-random"></i> &nbsp;&nbsp;&nbsp;&nbsp;SORTEAR CARGOS
+        </button> 
+        <button onclick="reset()" value="Limpar" tabindex="16" class="w3-button w3-black w3-section margem-direita-5">
+          <i class="fa fa-trash"></i> &nbsp;&nbsp;&nbsp;&nbsp;LIMPAR
+        </button> 
+      </form>
+    </div>
   </center>
+  
+  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <div class="w3-xlarge w3-section">
+      <a href="https://www.twitter.com/meledrama" class="icon-block">
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+      </a>
+    </div>
+    <p>Feito por <a href="https://www.twitter.com/meledrama" title="EdwardCullen!" target="_blank" class="w3-hover-text-green">EdwardCullen!</a></p>
+  </footer>
   
 
 <script>
