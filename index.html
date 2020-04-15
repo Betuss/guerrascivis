@@ -14,18 +14,61 @@
 
 <body>
 
-<p>Enter names in the fields, then click "Submit" to submit the form:</p>
+<p>Insira os nicks dos 14 jogadores:</p>
 
 <form id="frm1" action="/action_page.php">
-  First name: <input type="text" name="fname"><br>
-  Last name: <input type="text" name="lname"><br><br>
-  <input type="button" onclick="myFunction()" value="Submit">
+  1&ordf;: <input id='cadeira1' type="text" name="cadeira1"> &nbsp; 8&ordf;: <input id='cadeira8' type="text" name="cadeira8"><br>
+  2&ordf;: <input id='cadeira2'  type="text" name="cadeira2"> &nbsp; 9&ordf;: <input id='cadeira9' type="text" name="cadeira9"><br>
+  3&ordf;: <input id='cadeira3' type="text" name="cadeira3"> 10&ordf;: <input id='cadeira10' type="text" name="cadeira10"><br>
+  4&ordf;: <input id='cadeira4' type="text" name="cadeira4"> 11&ordf;: <input id='cadeira11' type="text" name="cadeira11"><br>
+  5&ordf;: <input id='cadeira5' type="text" name="cadeira5"> 12&ordf;: <input id='cadeira12' type="text" name="cadeira12"><br>
+  6&ordf;: <input id='cadeira6' type="text" name="cadeira6"> 13&ordf;: <input id='cadeira13' type="text" name="cadeira13"><br>
+  7&ordf;: <input id='cadeira7' type="text" name="cadeira7"> 14&ordf;: <input id='cadeira14' type="text" name="cadeira14"><br><br>
+  <input type="button" onclick="myFunction()" value="Sortear cargos">
+  <input type="button" onclick="reset()" value="Limpar">
 </form>
+  
+  
 
 <script>
-function myFunction() {
-  document.getElementById("frm1").submit();
-}
+  function myFunction() {
+    document.getElementById("frm1").submit();
+    
+    var cadeiras = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
+                    'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
+                    'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14'];
+    var valoresCadeiras = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    var cargos = ['DETETIVE', 'ALDEÃO', 'ANJO', 'JUÍZ', 'FADA', 'POLICIAL', 'JUSTICEIRO',
+                  'ASSASSINO', 'APRENDIZ', 'DEMÔNIO', 'PAPARAZZI', 'PARALISADOR', 'SILENCIADOR', 'PSICOPATA'];
+
+    shuffle(cargos);
+    
+    for (var i = 0; i < 14; i++) {
+       var elem = document.getElementById(cadeiras[i]);
+       elem.value += (' (' + cargos[i] + ')'); 
+       console.log(elem.value);
+    }
+    
+  }
+  
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
 </script>
 
 </body>
