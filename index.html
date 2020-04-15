@@ -36,11 +36,33 @@
     .margem-direita-5 {
       margin-right: 5px;
     }
+    
+    .bgimg-1 {
+      background-image: url('https://1.bp.blogspot.com/-w3A__6Ef1AE/Wfkos9OxY3I/AAAAAAAA_dM/igN9kqdZF5Y7Rp-8YSraeWQ79wnnyT4OACKgBGAs/s1600/Article_header_SUMMER_JoinTheTribe.gif');
+      min-height: 20%;
+    }
+
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+      .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+      }
+    }
   </style>
 </head>
   
   
 <body>
+  
+  <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">GUERRAS CIVIS</span>
+    </div>
+  </div>
   
   <center> 
     <div class="w3-content w3-container w3-padding-64">
