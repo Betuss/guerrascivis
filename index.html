@@ -52,6 +52,10 @@
         min-height: 400px;
       }
     }
+    
+    .margin-top-20 {
+      margin-top: 20px;
+    }
   </style>
 </head>
   
@@ -131,12 +135,32 @@
             <input id='cadeira14' class="w3-input w3-border" type="text" placeholder="14&ordf; cadeira" tabindex="14">
           </div>
         </div>
+      
+        <h3 class="w3-center margin-top-20">Cadeiras extras</h3>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira15' class="w3-input w3-border" type="text" placeholder="15&ordf; cadeira" tabindex="15">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira17' class="w3-input w3-border" type="text" placeholder="17&ordf; cadeira" tabindex="17">
+          </div>
+        </div>
+
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input id='cadeira16' class="w3-input w3-border" type="text" placeholder="16&ordf; cadeira" tabindex="16">
+          </div>
+          <div class="w3-half">
+            <input id='cadeira18' class="w3-input w3-border" type="text" placeholder="18&ordf; cadeira" tabindex="18">
+          </div>
+        </div>
 
 
-        <button onclick="myFunction()" value="Sortear cargos" tabindex="15" class="w3-button w3-black w3-section margem-direita-5">
+        <button onclick="myFunction()" value="Sortear cargos" tabindex="19" class="w3-button w3-black w3-section margem-direita-5">
           <i class="fa fa-random"></i> &nbsp;&nbsp;&nbsp;&nbsp;SORTEAR CARGOS
         </button> 
-        <button onclick="reset()" value="Limpar" tabindex="16" class="w3-button w3-black w3-section margem-direita-5">
+        <button onclick="reset()" value="Limpar" tabindex="20" class="w3-button w3-black w3-section margem-direita-5">
           <i class="fa fa-trash"></i> &nbsp;&nbsp;&nbsp;&nbsp;LIMPAR
         </button> 
     </div>
@@ -150,26 +174,91 @@
 <script>
   function myFunction() {
     
-    var cadeiras = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
-                    'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
-                    'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14'];
+    var cadeiras14 = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
+                      'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
+                      'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14'];
+    
+    var cadeiras16 = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
+                      'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
+                      'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14', 'cadeira15',
+                      'cadeira16'];
+    
+    var cadeiras18 = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
+                      'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
+                      'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14', 'cadeira15',
+                      'cadeira16', 'cadeira17', 'cadeira18'];
 
-    var cargos = ['DETETIVE)   ', 'ALDEÃO)     ', 'ANJO)       ',
-                  'JUIZ)       ', 'FADA)       ', 'POLICIAL)   ',
-                  'JUSTICEIRO) ', 'ASSASSINO)  ', 'APRENDIZ)   ',
-                  'DEMÔNIO)    ', 'PAPARAZZI)  ', 'PARALISADOR)',
-                  'SILENCIADOR)', 'PSICOPATA)  '];
-
+    var cargos14 = ['DETETIVE)          ', 'ALDEÃO)            ', 'ANJO)              ',
+                    'JUIZ)              ', 'FADA)              ', 'POLICIAL)          ',
+                    'JUSTICEIRO)        ', 'ASSASSINO)         ', 'APRENDIZ)          ',
+                    'DEMÔNIO)           ', 'PAPARAZZI)         ', 'PARALISADOR)       ',
+                    'SILENCIADOR)       ', 'PSICOPATA)         '];
+    
+    var cargos16 = ['DETETIVE)          ', 'ALDEÃO)            ', 'ANJO)              ',
+                    'JUIZ)              ', 'FADA)              ', 'POLICIAL)          ',
+                    'JUSTICEIRO)        ', 'ASSASSINO)         ', 'APRENDIZ)          ',
+                    'DEMÔNIO)           ', 'PAPARAZZI)         ', 'PARALISADOR)       ',
+                    'SILENCIADOR)       ', 'PSICOPATA)         ',
+                    'ESPÍRITO VINGATIVO)', 'HOMEM-BOMBA)       '];
+    
+    var cargos18 = ['DETETIVE)          ', 'ALDEÃO)            ', 'ANJO)              ',
+                    'JUIZ)              ', 'FADA)              ', 'POLICIAL)          ',
+                    'JUSTICEIRO)        ', 'ASSASSINO)         ', 'APRENDIZ)          ',
+                    'DEMÔNIO)           ', 'PAPARAZZI)         ', 'PARALISADOR)       ',
+                    'SILENCIADOR)       ', 'PSICOPATA)         ',
+                    'ESPÍRITO VINGATIVO)', 'HOMEM-BOMBA)       ',
+                    'ESCUDEIRO)         ', 'JOKER)             '];
+  
+    var quantidade = 14;
+    
+    if(document.getElementById(cadeiras18[17]).value != ""){
+      quantidade = 18;
+    } else if(document.getElementById(cadeiras18[15]).value != ""){
+      quantidade = 16;
+    }
+    
+    var cargos = cargos14;
+    var cadeiras = cadeiras14;
+    
+    if(quantidade == 16){
+      cargos = cargos16;
+      cadeiras = cadeiras16;
+    } else if(quantidade == 18){
+      console.log('entrei');
+      cargos = cargos18;
+      cadeiras = cadeiras18;
+    }
+    
+    console.log(quantidade);
+    
     shuffle(cargos);
     
     if(document.getElementById(cadeiras[0]).value.includes(" (")){
       for (var i = 0; i < 14; i++) {
          var elem = document.getElementById(cadeiras[i]);
-         elem.value = elem.value.substring(0, elem.value.length - 14);
+         elem.value = elem.value.substring(0, elem.value.length - 21);
       }
     }
     
-    for (var i = 0; i < 14; i++) {
+    if(quantidade > 14){
+      if(document.getElementById(cadeiras[14]).value.includes(" (")){
+        for (var i = 14; i < 16; i++) {
+           var elem = document.getElementById(cadeiras[i]);
+           elem.value = elem.value.substring(0, elem.value.length - 21);
+        }
+      }
+    }
+    
+    if(quantidade == 18){
+      if(document.getElementById(cadeiras[16]).value.includes(" (")){
+        for (var i = 16; i < 18; i++) {
+           var elem = document.getElementById(cadeiras[i]);
+           elem.value = elem.value.substring(0, elem.value.length - 21);
+        }
+      }
+    }
+    
+    for (var i = 0; i < quantidade; i++) {
        var elem = document.getElementById(cadeiras[i]);
        elem.value += (' (' + cargos[i]);
     }
@@ -197,10 +286,11 @@
   
   function reset() {
     var cadeiras = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
-                    'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
-                    'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14'];
+                      'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
+                      'cadeira11', 'cadeira12', 'cadeira13', 'cadeira14', 'cadeira15',
+                      'cadeira16', 'cadeira17', 'cadeira18'];
     
-    for (var i = 0; i < 14; i++) {
+    for (var i = 0; i < 18; i++) {
        var elem = document.getElementById(cadeiras[i]);
        elem.value = "";
     }
