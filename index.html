@@ -158,14 +158,19 @@
             <input id='cadeira18' class="w3-input w3-border" type="text" placeholder="18&ordf; cadeira" tabindex="18">
           </div>
         </div>
-
-
-        <button onclick="myFunction()" value="Sortear cargos" tabindex="19" class="w3-button w3-black w3-section margem-direita-5">
+        
+        <button onclick="sortearCargos()" value="Sortear cargos" tabindex="19" class="w3-button w3-green w3-section margem-direita-5">
           <i class="fa fa-random"></i> &nbsp;&nbsp;&nbsp;&nbsp;SORTEAR CARGOS
         </button> 
-        <button onclick="reset()" value="Limpar" tabindex="20" class="w3-button w3-black w3-section margem-direita-5">
+        <button onclick="reset()" value="Limpar" tabindex="20" class="w3-button w3-red w3-section margem-direita-5">
           <i class="fa fa-trash"></i> &nbsp;&nbsp;&nbsp;&nbsp;LIMPAR
         </button> 
+        <button onclick="exibirImagemCadeiras()" value="Limpar" tabindex="20" class="w3-button w3-blue w3-section margem-direita-5">
+          <i class="fa fa-question-circle"></i> &nbsp;&nbsp;&nbsp;&nbsp;ORDENAÇÃO CADEIRAS
+        </button>
+      
+        <img id="bigpic" src="/gc_cadeiras.png" style="display:none;"/>
+
     </div>
   </center>
   
@@ -175,7 +180,7 @@
   
 
 <script>
-  function myFunction() {
+  function sortearCargos() {
     
     var cadeiras14 = ['cadeira1', 'cadeira2', 'cadeira3', 'cadeira4', 'cadeira5',
                       'cadeira6', 'cadeira7', 'cadeira8', 'cadeira9', 'cadeira10', 
@@ -297,6 +302,10 @@
        var elem = document.getElementById(cadeiras[i]);
        elem.value = "";
     }
+  }
+  
+  function exibirImagemCadeiras() {
+    document.getElementById('bigpic').style.display='block';
   }
 </script>
 
