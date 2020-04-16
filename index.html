@@ -165,11 +165,11 @@
         <button onclick="reset()" value="Limpar" tabindex="20" class="w3-button w3-red w3-section margem-direita-5">
           <i class="fa fa-trash"></i> &nbsp;&nbsp;&nbsp;&nbsp;LIMPAR
         </button> 
-        <button onclick="exibirImagemCadeiras()" value="Limpar" tabindex="20" class="w3-button w3-blue w3-section margem-direita-5">
+        <button onclick="alternarImagemCadeiras()" value="Limpar" tabindex="20" class="w3-button w3-blue w3-section margem-direita-5">
           <i class="fa fa-question-circle"></i> &nbsp;&nbsp;&nbsp;&nbsp;ORDENAÇÃO CADEIRAS
         </button>
       
-        <img id="bigpic" src="./gc_cadeiras.png" style="display:none;"/>
+        <img id="imagemCadeiras" src="/gc_cadeiras.png" style="display:none;"/>
 
     </div>
   </center>
@@ -304,8 +304,13 @@
     }
   }
   
-  function exibirImagemCadeiras() {
-    document.getElementById('bigpic').style.display='block';
+  function alternarImagemCadeiras() {
+    var imagem = document.getElementById('imagemCadeiras');
+    if (imagem.style.display === "none") {
+      imagem.style.display = "block";
+    } else {
+      imagem.style.display = "none";
+    }
   }
 </script>
 
